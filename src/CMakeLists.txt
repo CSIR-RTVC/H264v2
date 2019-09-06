@@ -11,11 +11,18 @@ ELSE (WIN32)
     #SET(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -Wwrite-strings")
 ENDIF (WIN32)
 
+SET (H264_INCLUDE_DEPENDENCIES 
+    ${PROJECT_SOURCE_DIR}/include/H264v2Codec
+    ${PROJECT_SOURCE_DIR}/externals/CodecUtils/include/CodecUtils
+    ${PROJECT_SOURCE_DIR}/externals/GeneralUtils/include/GeneralUtils
+    ${PROJECT_SOURCE_DIR}/externals/ImageUtils/include/ImageUtils
+    ${PROJECT_SOURCE_DIR}/externals/StreamUtils/include/StreamUtils
+)
+
 SET (H264_INCLUDE_DIRS 
-	${PROJECT_SOURCE_DIR}/externals/CodecUtils/include/CodecUtils
-	${PROJECT_SOURCE_DIR}/externals/GeneralUtils/include/GeneralUtils
-	${PROJECT_SOURCE_DIR}/externals/ImageUtils/include/ImageUtils
-	${PROJECT_SOURCE_DIR}/externals/StreamUtils/include/StreamUtils
+	#${PROJECT_SOURCE_DIR}/include
+    #${PROJECT_SOURCE_DIR}/include/H264v2Codec
+    ${PROJECT_SOURCE_DIR}/include/H264v2
 )
 
 #INCLUDE_DIRECTORIES(
@@ -29,9 +36,9 @@ SET (H264_INCLUDE_DIRS
 #)
 
 SET(H264v2_LIB_HDRS
-    H264v2.h
-    ../includes/H264v2Codec/H264v2Codec.h
-    ../includes/H264v2Codec/H264v2CodecHeader.h
+    ../include/H264v2/H264v2.h
+    ../include/H264v2Codec/H264v2Codec.h
+    ../include/H264v2Codec/H264v2CodecHeader.h
     )
 
 SET(H264v2_LIB_SRCS
@@ -63,7 +70,7 @@ target_include_directories(H264v2
         $<BUILD_INTERFACE:${H264_INCLUDE_DIRS}>
     PRIVATE
         ${CMAKE_CURRENT_SOURCE_DIR}
-		${H264_INCLUDE_DEPENDENCIES}
+	${H264_INCLUDE_DEPENDENCIES}
 )
 
 target_compile_features(H264v2 PRIVATE cxx_std_11)

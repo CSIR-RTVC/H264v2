@@ -4,3 +4,9 @@
 [submodule "externals/ImageUtils"]
 	path = externals/ImageUtils
 	url = https://github.com/CSIR-RTVC/ImageUtils
+[submodule "externals/CodecUtils"]
+	path = externals/CodecUtils
+	url = https://github.com/CSIR-RTVC/CodecUtils
+[submodule "externals/StreamUtils"]
+	path = externals/StreamUtils
+	url = https://github.com/CSIR-RTVC/StreamUtils
