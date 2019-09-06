@@ -1,0 +1,6 @@
+[submodule "externals/GeneralUtils"]
+	path = externals/GeneralUtils
+	url = https://github.com/CSIR-RTVC/GeneralUtils
+[submodule "externals/ImageUtils"]
+	path = externals/ImageUtils
+	url = https://github.com/CSIR-RTVC/ImageUtils
