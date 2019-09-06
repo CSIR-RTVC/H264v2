@@ -83,6 +83,9 @@ ENDIF (WIN32)
 
 TARGET_LINK_LIBRARIES(
     H264v2
+	CodecUtils::CodecUtils
+	ImageUtils::ImageUtils
+	GeneralUtils::GeneralUtils
 #    RtvcCodecUtils
 #    RtvcGeneralUtils
 #    RtvcImageUtils
